@@ -15,8 +15,8 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen bg-white overflow-hidden">
       {/* Animated Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-red-100 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-50 rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
 
       {/* Parallax Background */}
       {/* Removed for pure white background */}
@@ -25,15 +25,15 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-80px)] flex items-center justify-center">
         <div className="text-center space-y-8 animate-fade-in">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full hover:shadow-lg transition-all duration-300">
-            <span className="text-blue-700 text-sm font-semibold">✨ Welcome to Electronics Company</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full hover:shadow-lg transition-all duration-300">
+            <span className="text-red-700 text-sm font-semibold">✨ Welcome to Electronics Company</span>
           </div>
 
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
               Advanced 
-              <span className="block bg-linear-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+              <span className="block bg-linear-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
                 Electronics Solutions
               </span>
             </h1>
@@ -48,13 +48,13 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Link
               href="/contact"
-              className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 hover:shadow-lg hover:shadow-blue-200 hover:scale-105"
+              className="px-8 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all duration-300 hover:shadow-lg hover:shadow-red-200 hover:scale-105"
             >
               Get Started
             </Link>
             <Link
               href="/about"
-              className="px-8 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300 hover:shadow-lg"
+              className="px-8 py-3 border-2 border-red-600 text-red-600 font-semibold rounded-lg hover:bg-red-50 transition-all duration-300 hover:shadow-lg"
             >
               Learn More
             </Link>
@@ -63,15 +63,15 @@ export default function HeroSection() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 pt-12 max-w-xl mx-auto">
             <div className="text-center hover:scale-110 transition-transform duration-300">
-              <p className="text-3xl font-bold text-blue-600">1000+</p>
+              <p className="text-3xl font-bold text-red-600">1000+</p>
               <p className="text-gray-500 text-sm">Devices Manufactured</p>
             </div>
             <div className="text-center hover:scale-110 transition-transform duration-300">
-              <p className="text-3xl font-bold text-blue-600">200+</p>
+              <p className="text-3xl font-bold text-red-600">200+</p>
               <p className="text-gray-500 text-sm">Engineers</p>
             </div>
             <div className="text-center hover:scale-110 transition-transform duration-300">
-              <p className="text-3xl font-bold text-blue-600">15+</p>
+              <p className="text-3xl font-bold text-red-600">15+</p>
               <p className="text-gray-500 text-sm">Years in Electronics</p>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function HeroSection() {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
         <div className="animate-bounce">
-          <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>

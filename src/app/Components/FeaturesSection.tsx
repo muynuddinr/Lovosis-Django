@@ -43,7 +43,7 @@ export default function FeaturesSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Why Choose
-            <span className="block bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
               Lovosis
             </span>
           </h2>
@@ -57,7 +57,7 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-white rounded-xl p-8 border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1"
+              className="group bg-white rounded-xl p-8 border border-gray-200 hover:border-red-300 transition-all duration-300 hover:shadow-xl hover:shadow-red-100/50 hover:-translate-y-1"
             >
               {/* Icon */}
               <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -65,7 +65,7 @@ export default function FeaturesSection() {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors duration-300">
                 {feature.title}
               </h3>
               <p className="text-gray-600 leading-relaxed">
@@ -73,7 +73,7 @@ export default function FeaturesSection() {
               </p>
 
               {/* Accent Line */}
-              <div className="mt-6 h-1 w-0 bg-gradient-to-r from-blue-600 to-blue-400 group-hover:w-full transition-all duration-300 rounded-full"></div>
+              <div className="mt-6 h-1 w-0 bg-gradient-to-r from-red-600 to-red-400 group-hover:w-full transition-all duration-300 rounded-full"></div>
             </div>
           ))}
         </div>
@@ -84,10 +84,10 @@ export default function FeaturesSection() {
             Ready to transform your business with Lovosis?
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 hover:shadow-lg hover:shadow-blue-200">
+            <button className="px-8 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all duration-300 hover:shadow-lg hover:shadow-red-200">
               Get Started Now
             </button>
-            <button className="px-8 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300">
+            <button className="px-8 py-3 border-2 border-red-600 text-red-600 font-semibold rounded-lg hover:bg-red-50 transition-all duration-300">
               View Demo
             </button>
           </div>

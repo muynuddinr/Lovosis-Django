@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import logo from '../../../public/logo0bg.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,24 +18,24 @@ export default function Navbar() {
 
   const navItems = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
-    { href: '/products', label: 'Products' },
-    { href: '/certificates', label: 'Certificates' },
-    { href: '/gallery', label: 'Gallery' },
+    { href: '/Aboutus', label: 'About' },
+    { href: '/Services', label: 'Services' },
+    { href: '/Products', label: 'Products' },
+    { href: '/Certificates', label: 'Certificates' },
+    { href: '/Gallery', label: 'Gallery' },
   ];
 
   const isActive = (href: string) => pathname === href;
 
   // Conditional styles
   const bgClass = scrolled 
-    ? 'bg-slate-900 border-blue-500/20' 
+    ? 'bg-slate-900 border-red-500/20' 
     : 'bg-white/95 border-gray-100/50';
   const textClass = scrolled ? 'text-white' : 'text-gray-900';
   const linkClass = scrolled 
     ? 'text-gray-300 hover:text-white' 
-    : 'text-gray-600 hover:text-blue-600';
-  const activeClass = scrolled ? 'text-blue-400' : 'text-blue-600';
+    : 'text-gray-600 hover:text-red-600';
+  const activeClass = scrolled ? 'text-red-400' : 'text-red-600';
 
   return (
     <nav className={`sticky top-0 z-50 transition-colors duration-300 border-b ${bgClass}`}>
@@ -42,12 +43,11 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">L</span>
-            </div>
-            <div className="hidden sm:block">
-              <p className={`font-bold text-sm ${textClass}`}>Lovosis</p>
-            </div>
+            <img
+              src={logo.src}
+              alt="Lovosis Logo"
+              className="w-24 h-20 object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -69,7 +69,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="hidden md:inline-block px-4 py-1.5 text-sm font-semibold text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-all"
+              className="hidden md:inline-block px-4 py-1.5 text-sm font-semibold text-red-600 border border-red-600 rounded-lg hover:bg-red-600 hover:text-white transition-all"
             >
               Contact
             </Link>
@@ -122,7 +122,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block mt-3 mx-4 px-4 py-2 text-sm font-semibold text-center text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-all"
+                className="block mt-3 mx-4 px-4 py-2 text-sm font-semibold text-center text-red-600 border border-red-600 rounded-lg hover:bg-red-600 hover:text-white transition-all"
               >
                 Contact
               </Link>

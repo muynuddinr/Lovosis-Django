@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import logo from '../../../public/logo0bg.png';
 
 export default function Loader() {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,29 +35,29 @@ export default function Loader() {
     >
       {/* Animated Background Circle */}
       <motion.div
-        className="absolute inset-0 -z-10 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl"
+        className="absolute inset-0 -z-10 w-80 h-80 bg-red-600/5 rounded-full blur-3xl"
         animate={{ scale: [0.8, 1.2, 0.8] }}
         transition={{ duration: 4, repeat: Infinity }}
       />
 
       {/* Main Content */}
       <div className="relative z-10 text-center px-4">
-        <motion.h1
-          className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-blue-600 tracking-wider"
+        <motion.img
+          src={logo.src}
+          alt="Logo"
+          className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain"
           initial={{ scale: 0.1, opacity: 0 }}
-          animate={{ scale: 1.5, opacity: 1 }}
+          animate={{ scale: 2.5, opacity: 1 }}
           transition={{
-            duration: 2.5,
+            duration: 3,
             ease: 'easeOut',
             delay: 0.3,
           }}
-        >
-          Lovosis
-        </motion.h1>
+        />
 
         {/* Animated Bottom Line */}
         <motion.div
-          className="mt-6 sm:mt-8 h-1 w-32 sm:w-40 bg-blue-600 rounded-full mx-auto"
+          className="mt-6 sm:mt-8 h-1 w-32 sm:w-40 bg-red-600 rounded-full mx-auto"
           initial={{ scaleX: 0, opacity: 0 }}
           animate={{ scaleX: 1, opacity: 1 }}
           transition={{ delay: 2, duration: 0.8 }}
