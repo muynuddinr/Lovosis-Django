@@ -13,7 +13,7 @@ export default function Contact() {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -21,7 +21,7 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     alert("Thank you for your message! We will get back to you soon.");
@@ -312,7 +312,7 @@ export default function Contact() {
                 CONNECT <span className="font-normal">WITH US.</span>
               </h2>
 
-              <div className="space-y-3 py-3 flex-grow flex flex-col">
+              <form onSubmit={handleSubmit} className="space-y-3 py-3 flex-grow flex flex-col">
                 {/* First Name and Last Name in two columns */}
                 <div className="flex gap-3">
                   <div className="flex-1">
@@ -382,13 +382,12 @@ export default function Contact() {
                 <div className="mt-auto">
                   <button
                     type="submit"
-                    onClick={handleSubmit}
                     className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-4 text-sm transition duration-300"
                   >
                     SEND YOUR MESSAGE
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
@@ -427,7 +426,7 @@ export default function Contact() {
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                allowFullScreen=""
+                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Lovosis Technology Location"

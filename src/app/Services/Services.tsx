@@ -29,10 +29,10 @@ interface ServiceCard {
 }
 
 const ServicesSection: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<'it' | 'electronics'>('it');
+  const [activeCategory, setActiveCategory] = useState<'it' | 'electronics'>('electronics');
 
   const itServices: ServiceCard[] = [
-    {
+    { 
       icon: <Code className="w-8 h-8" strokeWidth={1.5} />,
       title: 'Software Development',
       description: 'Custom software solutions tailored to your business needs with modern technologies.',
