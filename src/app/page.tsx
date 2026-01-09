@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div>
       <Loader />
-      <Navbar />
+
       <Banner />
       <ShuffleHero />
       {/* <Hero /> */}
@@ -21,7 +21,7 @@ export default function Home() {
          <Services />
       <Why />
       <Faq />
-      <Footer />
+
     </div>
   );
 }

@@ -5,9 +5,9 @@ import Footer from '../Components/Footer';
 export default function ServicesPage() {
   return (
     <div>
-      <Navbar />
+     
       <ServicesSection />
-      <Footer />
+  
     </div>
   );
 }

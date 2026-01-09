@@ -2,29 +2,45 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import logo from '../../../public/logo0bg.png';
 
 export default function Loader() {
-  const [isLoading, setIsLoading] = useState(true);
-
+  const [showLoader, setShowLoader] = useState(false);
+  const pathname = usePathname();
+  
   useEffect(() => {
-    if (isLoading) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
+    // Only trigger on homepage
+    if (pathname === '/') {
+      // Check if this is the very first visit to homepage
+      const isFirstHomepageVisit = !localStorage.getItem('hasSeenHomepageLoader');
+      
+      if (isFirstHomepageVisit) {
+        setShowLoader(true);
+        document.body.style.overflow = 'hidden';
+        
+        const timer = setTimeout(() => {
+          localStorage.setItem('hasSeenHomepageLoader', 'true');
+          setShowLoader(false);
+          document.body.style.overflow = 'unset';
+        }, 3500);
+        
+        return () => {
+          clearTimeout(timer);
+          document.body.style.overflow = 'unset';
+        };
+      }
     }
-
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3500);
-
+    
+    document.body.style.overflow = 'unset';
+    
     return () => {
-      clearTimeout(timer);
       document.body.style.overflow = 'unset';
     };
-  }, [isLoading]);
+  }, [pathname]);
 
-  if (!isLoading) return null;
+  if (!showLoader) return null;
 
   return (
     <motion.div
@@ -42,10 +58,8 @@ export default function Loader() {
 
       {/* Main Content */}
       <div className="relative z-10 text-center px-4">
-        <motion.img
-          src={logo.src}
-          alt="Logo"
-          className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain"
+        <motion.div
+          className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 mx-auto"
           initial={{ scale: 0.1, opacity: 0 }}
           animate={{ scale: 2.5, opacity: 1 }}
           transition={{
@@ -53,7 +67,15 @@ export default function Loader() {
             ease: 'easeOut',
             delay: 0.3,
           }}
-        />
+        >
+          <Image
+            src={logo}
+            alt="Logo"
+            fill
+            className="object-contain"
+            priority
+          />
+        </motion.div>
 
         {/* Animated Bottom Line */}
         <motion.div

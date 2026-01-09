@@ -5,9 +5,9 @@ import About from './Aboutus';
 export default function AboutPage() {
   return (
     <>
-      <Navbar />
+    
         <About />
-        <Footer />
+
     </>
   );
 }

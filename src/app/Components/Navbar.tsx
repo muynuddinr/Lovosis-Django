@@ -18,11 +18,10 @@ export default function Navbar() {
 
   const navItems = [
     { href: '/', label: 'Home' },
-    { href: '/Aboutus', label: 'About' },
-    { href: '/Services', label: 'Services' },
-    { href: '/Products', label: 'Products' },
-    { href: '/Certificates', label: 'Certificates' },
-    { href: '/Gallery', label: 'Gallery' },
+    { href: '/aboutus', label: 'About' },
+    { href: '/services', label: 'Services' },
+    { href: '/products', label: 'Products' },
+    { href: '/gallery', label: 'Gallery' },
   ];
 
   const isActive = (href: string) => pathname === href;
@@ -69,7 +68,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="hidden md:inline-block px-4 py-1.5 text-sm font-semibold text-red-600 border border-red-600 rounded-lg hover:bg-red-600 hover:text-white transition-all"
+              className="hidden md:inline-block px-4 py-1.5 text-sm font-semibold text-red-600 border border-red-600  hover:bg-red-600 hover:text-white transition-all"
             >
               Contact
             </Link>
